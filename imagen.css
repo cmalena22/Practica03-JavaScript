@@ -1,0 +1,29 @@
+html{
+    margin:0 auto ;
+    width: 40%;
+    max-width: 1000px;
+    min-width:500px;
+}
+
+body {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1120px;
+}
+html {  
+    background-color: #FE5F55;
+   }  
+  body { 
+    background-color: #EEF5DB; 
+       }
+
+
+img#imagen{
+    width: 100%;
+    height: 110%;
+}
+
+body text{
+    width: 32%;
+
+}
