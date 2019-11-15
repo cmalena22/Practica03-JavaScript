@@ -30,4 +30,12 @@ html {
         margin-left: .5em;
         padding-left: 90px;
     }
-    
+
+    .error {
+        color: red;
+        font-size: 8px;
+    }
+    .p {
+display: block !important;
+color: red;
+}
