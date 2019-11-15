@@ -31,11 +31,15 @@ function validarCamposObligatorios()
 
 function validarLetras(string){
     var out = '';
+    ca= document.getElementById("nombre").value
+   
     var filtro = 'abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ ';
         for (var i = 0; i < string.length; i++)
         if (filtro.indexOf(string.charAt(i)) != -1) 
         out += string.charAt(i);
     return out;
+
+   
 } 
 
 function dosPalabras(string) {
@@ -59,7 +63,35 @@ function validarNumero(e, fono){
     } 
 }
 
+function validarCedula(cedul){
+    var x=document.getElementById("cedula").value;
+    var total=0;
+    var longitud=x.length;
+    var longcheck =longitud-1;
+    if (longitud ==10){
+        for(i=0;i<longcheck;i++){
+            if(i % 2 ===0){
+                var aux=x.charAt(i) *2;
+                if (aux >=10) aux-=9;
+                total +=aux;
 
+            }else {
+                total +=parseInt(x.charAt(i))
+            }
+        }
+        total =total %10 != 0 ? 10 - total % 10 : 0;
+
+        if(x.charAt(longitud -1 ) == total){
+            return false;
+        } else {
+           
+            alert('su cedula esta mal')
+            return true;
+        }
+    }else {
+        return false;
+    }
+}
 
 function validarFecha(fecha) {
     var array =fecha.value.split('/');
@@ -80,10 +112,6 @@ function validarFecha(fecha) {
             alert('Fecha mal ingresada, usar formato dd/mm/yyyy');
             return true;
         }
-  /*  if (){
-        console.log('hola')
-        }*/
-       
     
 }
 
@@ -117,3 +145,52 @@ function validarContra(contra){
         
     }
 }
+function validar_clave(contrasenna)
+{
+    var x=document.getElementById('password').value
+    if(x.length >= 8)
+    {		
+        var mayuscula = false;
+        var minuscula = false;
+        var numero = false;
+        var caracter_raro = false;
+        
+        for(var i = 0;i<x.length;i++)
+        {
+            if(x.charCodeAt(i) >= 65 && x.charCodeAt(i) <= 90)
+            {
+                mayuscula = true;
+            }
+            else if(x.charCodeAt(i) >= 97 && x.charCodeAt(i) <= 122)
+            {
+                minuscula = true;
+            }
+            else if(x.charCodeAt(i) >= 48 && x.charCodeAt(i) <= 57)
+            {
+                numero = true;
+            }
+            else
+            {
+                caracter_raro = true;
+            }
+        }
+        if(mayuscula == true && minuscula == true && caracter_raro == true && numero == true)
+        {
+            return true;
+        }else {
+            alert('contraseña mal')
+           // document.getElementById('mensaje').innerHTML='contraseña mal'
+
+        }
+    } else if  (x.length <8) {
+       // document.getElementById("mensaje").innerHTML='<br>Debe tener 8 </br>'
+        alert('no contraseña mayor a 8')
+        
+   
+    return false;
+   
+}
+
+}
+
+

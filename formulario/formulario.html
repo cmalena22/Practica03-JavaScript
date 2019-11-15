@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -14,7 +14,8 @@
         <form id="formulario01" method="POST"  action="bien.php" onsubmit="return validarCamposObligatorios()">
                 <label for="cedula">Cedula (*)</label>
                 <input type="text" id="cedula" name="cedula" value="" placeholder="Ingrese el número de cedula ..."
-                onkeypress="return validarNumero(event, this)" />
+                onkeypress="return validarNumero(event, this)"
+                onkeyup="validarCedula(this)" />
                 <span id="mensajeCedula" class="error"></span>        
                 <br>
         
@@ -62,7 +63,7 @@
                 
                 <label for="contra">Contraseña (*)</label>
                 <input type="text" id="password" name="password" value="" placeholder="Ingrese su contraseña ..."
-                onchange="validarContra(this)"/>
+                onchange="validar_clave(this)"/>
                 <span id="mensaje" ></span>
                 <br>
 
@@ -71,7 +72,7 @@
                 <input type="submit" id="crear" name="crear" value="Aceptar" />
                 <input type="reset" id="cancelar" name="cancelar" value="Cancelar" />
             </form>    
-            <spam id="p" style="display: none;">Error, campos incompletos!</spam>
+         
         
       
 

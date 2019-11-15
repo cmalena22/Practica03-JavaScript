@@ -3,13 +3,12 @@ var ima=['../imagenes/foto1.jpg','../imagenes/foto2.jpg','../imagenes/foto3.jpg'
         '../imagenes/foto7.jpg','../imagenes/foto8.jpg','../imagenes/foto9.jpg',
         '../imagenes/foto10.jpg'];
 
-//var ram= Math.floor(Math.random()*ima.length);
 var A=[]
 num=0;
 for ( i = 0; i <=4; i++) {
   A[i]=ima[Math.floor(Math.random()*ima.length)];
    console.log(A) 
-  console.log(i)
+
 }
 
 function iniciar(){  
@@ -17,9 +16,6 @@ function iniciar(){
   document.getElementById("imagen").src=A[0];
 
 }
-
-
-
 function siguiente (){
  
 num++;
@@ -27,8 +23,8 @@ if(num>=A.length)
 {
   num=0;
 }
-    document.getElementById("imagen").src=A[num];    
- 
+document.getElementById("imagen").src=A[num];    
+document.getElementById("siguiente").disable=false;
 }
 
 function atras (){
@@ -41,13 +37,8 @@ num=0;
      
   }
         document.getElementById("imagen").src=A[num]; 
-
-  b=A.length
-  console.log('dhr')
-  console.log(b)
-
     
-  }
+}
   
 
 //function siguiente(){
